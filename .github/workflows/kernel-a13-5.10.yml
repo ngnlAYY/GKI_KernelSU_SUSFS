@@ -1,10 +1,10 @@
 name: Android 13 5.10
 permissions:
-  contents: write  # Allow writing to repository contents (for pushing tags)
-  actions: write   # Allows triggering actions
-  
+  contents: write # Allow writing to repository contents (for pushing tags)
+  actions: write # Allows triggering actions
+
 on:
-  workflow_call:  # This allows this workflow to be called from another workflow
+  workflow_call: # This allows this workflow to be called from another workflow
     inputs:
       make_release:
         required: true
@@ -23,16 +23,16 @@ on:
         type: string
         default: ""
       use_zram:
-        description: '是否开启增加更多ZRAM算法?'
+        description: "是否开启增加更多ZRAM算法?"
         required: true
         type: boolean
         default: true
       use_kpm:
-        description: '是否开启KPM功能?'
+        description: "是否开启KPM功能?"
         required: true
         type: boolean
         default: true
-  
+
 jobs:
   build-kernel-a13-5-10-kernelsu-susfs:
     strategy:
